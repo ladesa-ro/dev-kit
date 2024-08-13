@@ -1,8 +1,8 @@
-# development-resources
+# dev-kit
 
 ```sh
-git clone https://github.com/ladesa-ro/development-resources.git
-cd development-resources
+git clone https://github.com/ladesa-ro/dev-kit.git
+cd dev-kit
 ```
 
 ## Recursos
