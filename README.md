@@ -17,15 +17,19 @@ cd reverse-proxy;
 make up
 ```
 
+Você pode visualizar o dashboard do Traefik em: <http://traefik.ladesa.localhost>.
+
 ### Message Broker RabbitMQ
 
 ```sh
-cd reverse-proxy;
+cd message-broker;
 ```
 
 ```sh
 make up
 ```
+
+Você pode visualizar o dashboard do RabbitMQ em: <http://mq.ladesa.localhost>.
 
 ## Licensa
 
