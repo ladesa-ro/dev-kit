@@ -1,0 +1,46 @@
+services:
+  ladesa-message-broker:
+    image: docker.io/bitnami/rabbitmq:3.12
+
+    networks:
+      - ladesa-net
+
+    env_file:
+      - .env.example
+      - .env
+
+    labels:
+      #
+      # ===================================================================
+      - "traefik.enable=true"
+      # ===================================================================
+      - "traefik.http.services.mq.loadbalancer.server.port=15672"
+      # ------------
+      - "traefik.http.routers.mq.rule=Host(`mq.ladesa.localhost`)"
+      - "traefik.http.routers.mq.entrypoints=websecure"
+      - "traefik.http.routers.mq.tls=true"
+      - "traefik.http.routers.mq.service=mq"
+      # ------------
+      - "traefik.http.routers.mq-insecure.rule=Host(`mq.ladesa.localhost`)"
+      - "traefik.http.routers.mq-insecure.entrypoints=web"
+      - "traefik.http.routers.mq-insecure.tls=false"
+      - "traefik.http.routers.mq-insecure.service=mq"
+      # ===================================================================
+      - "traefik.tcp.services.mq-connect.loadbalancer.server.port=5672"
+      - "traefik.tcp.routers.mq-connect.rule=HostSNI(`*`)"
+      - "traefik.tcp.routers.mq-connect.entrypoints=rabbitmq"
+      # - "traefik.tcp.routers.mq-connect.tls=true"
+      # - "traefik.tcp.routers.mq-connect.tls.passthrough=true"
+      - "traefik.tcp.routers.mq-connect.service=mq-connect"
+      # ===================================================================
+    volumes:
+      - "ladesa-mesage-broker-data:/bitnami/rabbitmq/mnesia"
+
+
+volumes:
+  ladesa-mesage-broker-data:
+
+
+networks:
+  ladesa-net:
+    external: true

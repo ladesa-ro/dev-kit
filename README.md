@@ -17,6 +17,16 @@ cd reverse-proxy;
 make up
 ```
 
+### Message Broker RabbitMQ
+
+```sh
+cd reverse-proxy;
+```
+
+```sh
+make up
+```
+
 ## Licensa
 
 [MIT](./LICENSE)
