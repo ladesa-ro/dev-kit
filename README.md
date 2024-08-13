@@ -31,7 +31,7 @@ make up
 
 Você pode visualizar o dashboard do RabbitMQ em: <http://mq.ladesa.localhost>.
 
-## Licensa
+## Licença 
 
 [MIT](./LICENSE)
 
