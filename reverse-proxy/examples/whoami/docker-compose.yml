@@ -3,9 +3,12 @@ version: '3'
 services:
   ladesa-whoami:
     image: "traefik/whoami"
+
     networks:
       - ladesa-net
+
     labels:
+      #
       - "traefik.enable=true"
       #
       - "traefik.http.routers.whoami.rule=Host(`whoami.ladesa.localhost`)"

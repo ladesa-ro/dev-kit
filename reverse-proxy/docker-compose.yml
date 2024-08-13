@@ -4,11 +4,6 @@ services:
   ladesa-reverse-proxy:
     image: traefik:v3.1
 
-    # healthcheck:
-    #   test: ["CMD-SHELL", "wget -q --spider --proxy off localhost:8080/ping || exit 1"]
-    #   interval: 3s
-    #   retries: 12
-    
     networks:
       - ladesa-net
 
@@ -44,7 +39,9 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /etc/localtime:/etc/localtime:ro
       #
+
     labels:
+      #
       - "traefik.enable=true"
       #
       - "traefik.http.routers.traefik.rule=Host(`traefik.ladesa.localhost`)"
@@ -61,6 +58,11 @@ services:
       driver: "json-file"
       options:
         max-size: "1m"
+
+    # healthcheck:
+    #   test: ["CMD-SHELL", "wget -q --spider --proxy off localhost:8080/ping || exit 1"]
+    #   interval: 3s
+    #   retries: 12
 
 networks:
   ladesa-net:
