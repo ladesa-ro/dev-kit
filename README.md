@@ -1,4 +1,37 @@
-# dev-kit
+<div align="center">
+
+  <h1>Kit de Desenvolvimento do Ladesa</h1>
+
+  <!-- <a href="https://refine.dev/">
+      <img alt="refine logo" src="https://refine.ams3.cdn.digitaloceanspaces.com/readme/refine-readme-banner.png">
+  </a> -->
+
+  <!-- <br/>
+  <br/> -->
+
+  <!-- <div align="center">
+      <a href="https://refine.dev">Home Page</a> |
+      <a href="https://refine.dev/docs/">Documentation</a> |
+      <a href="https://refine.dev/examples/">Examples</a> |
+      <a href="https://discord.gg/refine">Discord</a> |
+      <a href="https://refine.dev/blog/">Blog</a>
+  </div> -->
+</div>
+
+<div align="center">
+
+O Ladesa Dev Kit é um repositório que conta com recursos feitos para a melhor configuração de ambiente local de
+desenvolvimento com o objetivo de melhorar a produtividade dos colaboradores dos sistemas.
+<br />
+<br />
+
+</div>
+
+---
+
+## Configuração de Desenvolvimento
+
+### Obter o código do projeto
 
 ```sh
 git clone https://github.com/ladesa-ro/dev-kit.git
@@ -10,29 +43,29 @@ cd dev-kit
 ### Proxy Reverso
 
 ```sh
-cd reverse-proxy;
+cd reverse-proxy
 ```
 
 ```sh
 make up
 ```
 
-Você pode visualizar o dashboard do Traefik em: <http://traefik.ladesa.localhost>.
+Acesso ao dashboard do Traefik em: <http://traefik.ladesa.localhost>.
 
 ### Message Broker RabbitMQ
 
 ```sh
-cd message-broker;
+cd message-broker
 ```
 
 ```sh
 make up
 ```
 
-Você pode visualizar o dashboard do RabbitMQ em: <http://mq.ladesa.localhost>.
+Acesso ao dashboard do RabbitMQ em: <http://mq.ladesa.localhost>.
 
-## Licença 
+## Licença
 
 [MIT](./LICENSE)
 
-Copyright (c) 2024-present, Ladesa
+© 2022 – _presente_ Ladesa.
