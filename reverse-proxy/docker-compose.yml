@@ -4,8 +4,6 @@ services:
   ladesa-reverse-proxy:
     image: traefik:v3.1
 
-    container_name: mq.ladesa.localhost
-
     networks:
       - ladesa-net
 

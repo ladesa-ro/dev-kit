@@ -2,6 +2,8 @@ services:
   ladesa-message-broker:
     image: docker.io/bitnami/rabbitmq:3.12
 
+    container_name: mq.ladesa.localhost
+
     networks:
       - ladesa-net
 
