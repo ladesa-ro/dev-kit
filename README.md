@@ -5,7 +5,9 @@ git clone https://github.com/ladesa-ro/development-resources.git
 cd development-resources
 ```
 
-## Proxy Reverso
+## Recursos
+
+### Proxy Reverso
 
 ```sh
 cd reverse-proxy;
@@ -14,3 +16,9 @@ cd reverse-proxy;
 ```sh
 make up
 ```
+
+## Licensa
+
+[MIT](./LICENSE)
+
+Copyright (c) 2024-present, Ladesa
