@@ -1,16 +1,65 @@
 version: '3'
 
 services:
-  reverse-proxy:
+  ladesa-reverse-proxy:
     # The official v3 Traefik docker image
     image: traefik:v3.1
     # Enables the web UI and tells Traefik to listen to docker
-    command: --api.insecure=true --providers.docker
+    command: 
+      #
+      - "--api.insecure=true"
+      # 
+      - "--log.level=DEBUG"
+      - "--api.debug=true"
+      # 
+      - "--accesslog=true"
+      # 
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--providers.docker.network=ladesa-net"
+      #
+      - "--entrypoints.web.address=:80"
+      # - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      #
+      - "--entrypoints.websecure.address=:443"
+      #
+    networks:
+      - ladesa-net
     ports:
       # The HTTP port
       - "80:80"
+      # The HTTPS port
+      - "443:443"
       # The Web UI (enabled by --api.insecure=true)
       - "8080:8080"
     volumes:
       # So that Traefik can listen to the Docker events
       - /var/run/docker.sock:/var/run/docker.sock
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider --proxy off localhost:8080/ping || exit 1"]
+      interval: 3s
+      retries: 12
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+
+  ladesa-whoami:
+    image: "traefik/whoami"
+    networks:
+      - ladesa-net
+    labels:
+      - "traefik.enable=true"
+      #
+      - "traefik.http.routers.whoami.rule=Host(`whoami.ladesa.localhost`)"
+      - "traefik.http.routers.whoami.entrypoints=websecure"
+      - "traefik.http.routers.whoami.tls=true"
+      #
+      - "traefik.http.routers.whoami-insecure.rule=Host(`whoami.ladesa.localhost`)"
+      - "traefik.http.routers.whoami-insecure.entrypoints=web"
+      - "traefik.http.routers.whoami-insecure.tls=false"
+      #
+
+networks:
+  ladesa-net:
+    external: true
