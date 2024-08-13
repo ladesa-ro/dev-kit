@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  ladesa-whoami:
+    image: "traefik/whoami"
+    networks:
+      - ladesa-net
+    labels:
+      - "traefik.enable=true"
+      #
+      - "traefik.http.routers.whoami.rule=Host(`whoami.ladesa.localhost`)"
+      - "traefik.http.routers.whoami.entrypoints=websecure"
+      - "traefik.http.routers.whoami.tls=true"
+      #
+      - "traefik.http.routers.whoami-insecure.rule=Host(`whoami.ladesa.localhost`)"
+      - "traefik.http.routers.whoami-insecure.entrypoints=web"
+      - "traefik.http.routers.whoami-insecure.tls=false"
+      #
+
+networks:
+  ladesa-net:
+    name: ladesa-net
+    external: true
