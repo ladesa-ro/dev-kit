@@ -1,14 +1,14 @@
 <h1 align="center">Kit de Desenvolvimento do Ladesa</h1>
 
-<p align="center">Recursos feitos para o ambiente local de desenvolvimento dos serviços 💝.</p>
+<p align="center">Recursos feitos para o desenvolvimento dos serviços em ambiente local 💝.</p>
 
 <p align="center">
  <a href="https://github.com/ladesa-ro/dev-kit/blob/main/LICENSE" target="_blank"><img alt="📝 License: MIT" src="https://img.shields.io/badge/%F0%9F%93%9D_license-MIT-21bb42.svg"></a>
 </p>
 
-<img align="right" alt="Project logo: the TypeScript blue square with rounded corners, but a plus sign instead of 'TS'" src="https://avatars.githubusercontent.com/u/143351320?s=64&v=4" height="64">
+<img align="right" alt="Logotipo do Ladesa: fundo verde com fonte branca escrito o nome da organização." src="https://avatars.githubusercontent.com/u/143351320?s=64&v=4" height="64">
 
-O _Kit de Desenvolvimento do Ladesa_ fornece aos colaboradores o guia e passo-a-passo para a configuração de desenvolvimento para qualquer um que queira contribuir com o Ladesa.
+O _Kit de Desenvolvimento do Ladesa_ fornece aos colaboradores um conjunto de recursos, como guias e passo-a-passo, para qualquer colaborador conseguir iniciar a jornada de desenvolvimento dos serviços do Ladesa.
 
 ## Vamos Começar
 
@@ -35,7 +35,21 @@ git clone https://github.com/ladesa-ro/dev-kit.git
 cd dev-kit
 ```
 
-### Proxy Reverso
+### Iniciar Proxy Reverso
+
+Durante o desenvolvimento dos serviços do Ladesa, você pode deparar com os seguintes endereços:
+
+- <http://mq.ladesa.localhost>;
+- <http://sso.ladesa.localhost>;
+- <http://api.ladesa.localhost>;
+- <http://web.ladesa.localhost/sisgha>;
+- <http://web.ladesa.localhost/sisgea>.
+
+Note que para cada domínio *.ladesa.localhost, é necessário outros sistemas em execução para lidar com essas requisições.
+
+O propósito do proxy reverso é ser quem recebe qualquer requisição para os endereços acima e encaminhe corretamente para o serviço correto.
+
+Então, quando você acessar qualquer endereco *.ladesa.localhost, quem irá receber suas solicitações é o proxy reverso. Assim, ele poderá olhar nas regras do negócio e encaminhar corretamente os seus pacotes para o servidor correto.
 
 ```sh
 cd reverse-proxy
