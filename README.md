@@ -6,7 +6,7 @@
  <a href="https://github.com/ladesa-ro/dev-kit/blob/main/LICENSE" target="_blank"><img alt="📝 License: MIT" src="https://img.shields.io/badge/%F0%9F%93%9D_license-MIT-21bb42.svg"></a>
 </p>
 
-<img align="right" alt="Project logo: the TypeScript blue square with rounded corners, but a plus sign instead of 'TS'" src="https://avatars.githubusercontent.com/u/143351320?s=128&v=4" height="128">
+<img align="right" alt="Project logo: the TypeScript blue square with rounded corners, but a plus sign instead of 'TS'" src="https://avatars.githubusercontent.com/u/143351320?s=64&v=4" height="64">
 
 O _Kit de Desenvolvimento do Ladesa_ fornece aos colaboradores o guia e passo-a-passo para a configuração de desenvolvimento para qualquer um que queira contribuir com o Ladesa.
 
