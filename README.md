@@ -12,7 +12,7 @@ O _Kit de Desenvolvimento do Ladesa_ fornece aos colaboradores um conjunto de re
 
 ## Vamos Começar
 
-### Configurar e Acessar a Linha de Comando
+### Configurar e entrar na Linha de Comando
 
 - <https://docs.ladesa.com.br/developers/tutorials/os/command-line/>
 
